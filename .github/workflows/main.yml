@@ -1,8 +1,9 @@
 name: itvlist
 
 on:
-  #schedule:
-    #- cron: '0 18 * * *'
+  schedule:
+    - cron: '0 4,16 * * *' # 自动运行中午12点晚上12点
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
@@ -35,7 +36,7 @@ jobs:
       - name: 提交更改
         run: |
           git config --local user.email "57248895@qq.com"
-          git config --local user.name "Ff520"
+          git config --local user.name "65896321456"
           git add .
           git commit *.txt -m "Add generated file"
           git commit *.m3u -m "Add generated file"
